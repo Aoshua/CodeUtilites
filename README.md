@@ -1,4 +1,4 @@
-# CodeUtilites
+# CodeUtilities
 Just some useful bash scripts.
 
 ### Utilites List:
