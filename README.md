@@ -2,10 +2,12 @@
 Just some useful bash scripts.
 
 ### Utilites List:
-1. TogglePathDirection  (Give it a url/path and it will reverse the slashes/backslashes)
-2. ShowContentAtCharPosition (Shows the char at a given position in the text and some surrounding code for context)
+1. cph (Character Position Highligher) Wraps the character at the given position in `[-> <-]` and shows within line for context.
 
 
+### Current Limitations:
+1. cph
+    * The line spacing must be the same; therefore files in single-line format work best.
 ### Notes:
 * I am using WSL2 on my Windows 10 machine to run my bash files.
 * As far as I have seen so far, it doesn't matter if bash files written in python have `.sh`, `.py` or even no file extension. 
