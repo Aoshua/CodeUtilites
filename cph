@@ -1,23 +1,40 @@
 #!/usr/bin/env python3
 import sys
 
-position = int(sys.argv[1])
-inFile = sys.argv[2]
+position = int(sys.argv[1]) # Capture file in-arguement
+inFile = sys.argv[2] # Catpture position in-argument
+
 strFile = ""
+lines = open(inFile, "r").readlines() # Read lines from file
 
-lines = open(inFile, "r").readlines()
-
-for line in lines
-    print(type(line))
-
-
-# with open(inFile, 'r') as i:
-#     lines = i.readlines()
-#     strFile += i.readlines()[0]
+# Make lines into one string for search:
+for line in lines:
+    strFile += line
     
-# beforePos = position - 24
-# afterPos = position + 24
-# print(strFile[beforePos:position] + "[~" + strFile[position] + "~]" + strFile[(position + 1):afterPos])
+# Find beginning of line:
+lineStart = ""
+forwardCount = 1
+while True:
+    if strFile[position - forwardCount] == '\n':
+        break
+    lineStart = strFile[position - forwardCount] + lineStart
+    forwardCount += 1
 
-#for line in lines :
-#    print(line)
+# Find end of line:
+lineEnd = ""
+backwardCount = 1
+while True:
+    lineEnd += strFile[position + backwardCount]
+    if strFile[position + backwardCount] == '\n':
+        break
+    backwardCount += 1
+
+# Join the parts:
+lineContent = lineStart + strFile[position] + lineEnd
+lineWithHighlight = lineStart + "[-> " + strFile[position] + " <-]" + lineEnd
+
+# Find line number, then show result:
+for idx, line in enumerate(lines):
+    if lineContent in line :
+        print(str(idx + 1) + ":", lineWithHighlight)
+
