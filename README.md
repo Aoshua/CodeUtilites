@@ -1,8 +1,9 @@
-# CodeUtilities
+# CodeUtility
 Just some useful bash scripts.
 
 ### Utilites List:
 1. TogglePathDirection  (Give it a url/path and it will reverse the slashes/backslashes)
+2. ShowContentAtCharPosition (Shows the char at a given position in the text and some surrounding code for context)
 
 
 ### Notes:
