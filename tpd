@@ -1,9 +1,0 @@
-#!/usr/bin/env python3
-import sys
-
-path = sys.argv[1]
-
-if "/" in path :
-    print(path.replace("/", "\\"))
-else : # This doesn't work yet :(
-    print(path.replace("\\", "/"))

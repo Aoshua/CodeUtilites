@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import sys
+
+position = int(sys.argv[1])
+inFile = sys.argv[2]
+strFile = ""
+
+with open(inFile, 'r') as i:
+    strFile += i.readlines()[0]
+    
+beforePos = position - 24
+afterPos = position + 24
+print(strFile[beforePos:position] + "[~" + strFile[position] + "~]" + strFile[(position + 1):afterPos])
+
+#for line in lines :
+#    print(line)
